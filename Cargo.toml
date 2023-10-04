@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 dioxus = "0.4.0"
+sir = { version = "0.4.0", features = ["dioxus"] }
+
 # dioxus-desktop = { version = "0.4.0", optional = true }
 # dioxus-web = { version = "0.4.0", optional = true }
 

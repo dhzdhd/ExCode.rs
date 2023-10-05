@@ -1,0 +1,12 @@
+@use 'sass:map'
+
+$dark: ( "bg": #1F34F6, "fg": #ffffff )
+$light: ( "bg": #F34233, "fg": #ffffff )
+
+@function themeColor($key)
+    $val: null
+    @if var(--theme) == "dark"
+        $val: map-get($dark, $key)
+    @else
+        $val: map-get($light, $key)
+    @return $val

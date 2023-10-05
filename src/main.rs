@@ -1,6 +1,17 @@
 #![allow(non_snake_case, unused)]
 use dioxus::prelude::*;
+use dioxus_material_icons::{MaterialIconStylesheet, MaterialIconVariant};
 use sir::{css, global_css, AppStyle};
+
+// enum Route {
+//     #[route("/home")]
+//     #[redirect("/:..segments", |segments: Vec<String>| Route::Home {})]
+//     Home {},
+//     #[route("/blog")]
+//     Blog {},
+//     #[route("/:..segments")]
+//     NotFound { segments: Vec<String> },
+// }
 
 #[cfg(target_arch = "wasm32")]
 fn main() {
@@ -13,20 +24,11 @@ fn main() {
 }
 
 fn App(cx: Scope) -> Element {
-    let mut count = use_state(cx, || 0);
-
-    let container = css!(
-        "
-        background-color: red;
-        color: blue;
-    "
-    );
-
+    const STYLE: &str = include_str!("./styles.css");
     cx.render(rsx! {
-        AppStyle {}
-        h1 { class: {container}, "High-Fivse counter: {count}" }
-        h1 { "hi" }
-        button { onclick: move |_| count += 1, "Up high!" }
-        button { onclick: move |_| count -= 1, "Down low!" }
+        MaterialIconStylesheet {
+            variant: MaterialIconVariant::Regular
+        }
+        style { "{STYLE}" }
     })
 }

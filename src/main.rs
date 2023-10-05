@@ -1,17 +1,23 @@
 #![allow(non_snake_case, unused)]
 use dioxus::prelude::*;
 use dioxus_material_icons::{MaterialIconStylesheet, MaterialIconVariant};
+use dioxus_router::prelude::*;
 use sir::{css, global_css, AppStyle};
 
-// enum Route {
-//     #[route("/home")]
-//     #[redirect("/:..segments", |segments: Vec<String>| Route::Home {})]
-//     Home {},
-//     #[route("/blog")]
-//     Blog {},
-//     #[route("/:..segments")]
-//     NotFound { segments: Vec<String> },
-// }
+mod components;
+mod routes;
+
+use routes::home::Home;
+
+#[rustfmt::skip]
+#[derive(Clone, Debug, PartialEq, Routable)]
+enum Route {
+    #[route("/")]
+    #[redirect("/:..segments", |segments: Vec<String>| Route::Home {})]
+    Home {},
+    // #[route("/:..segments")]
+    // NotFound { segments: Vec<String> },
+}
 
 #[cfg(target_arch = "wasm32")]
 fn main() {
@@ -26,6 +32,7 @@ fn main() {
 fn App(cx: Scope) -> Element {
     const STYLE: &str = include_str!("./styles.css");
     cx.render(rsx! {
+        Router::<Route> { }
         MaterialIconStylesheet {
             variant: MaterialIconVariant::Regular
         }

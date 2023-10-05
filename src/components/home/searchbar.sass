@@ -1,0 +1,30 @@
+@use '../../vars'
+
+.searchbar
+    height: 100%
+    display: flex
+    align-items: center
+    flex-grow: 1
+    border: solid 0.05rem
+    border-radius: 0.2rem
+    padding: 0rem 1rem
+    color: vars.get-color("text", "dark")
+
+    h1
+        font-weight: normal
+        font-size: 1.5rem
+
+    .searchbar__dropdown
+        position: absolute
+        top: 4rem
+        left: 2rem
+        z-index: 10
+        height: 70vh
+        width: 80vw
+        border: solid 0.1rem
+        border-radius: 0.3rem
+        background-color: vars.get-color("secondary", "dark")
+
+        li
+            text-decoration: none
+            list-style: none

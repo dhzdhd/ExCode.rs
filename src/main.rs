@@ -7,7 +7,7 @@ use sir::{css, global_css, AppStyle};
 mod components;
 mod routes;
 
-use routes::home::Home;
+use routes::{home::Home, settings::Settings};
 
 #[rustfmt::skip]
 #[derive(Clone, Debug, PartialEq, Routable)]
@@ -15,6 +15,8 @@ enum Route {
     #[route("/")]
     #[redirect("/:..segments", |segments: Vec<String>| Route::Home {})]
     Home {},
+    #[route("/settings")]
+    Settings {}
     // #[route("/:..segments")]
     // NotFound { segments: Vec<String> },
 }

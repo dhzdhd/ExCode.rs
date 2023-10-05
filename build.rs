@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Compile SASS to CSS
     let options = Options::default()
         .input_syntax(grass::InputSyntax::Sass)
-        .load_path("src");
+        .load_paths(["src", "src/components", "src/components/home"].as_ref());
 
     // Concatenate the contents of each SASS file into the `contents` string.
     for entry in entries {

@@ -1,4 +1,29 @@
-.header--home
-    height: 10rem
+@use '../vars'
+
+%header
+    position: fixed
+    height: 3.5rem
     width: 100vw
-    background-color: gray
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 1rem
+    padding: 0.3rem 2rem
+    background-color: vars.get-color("primary", "dark")
+    color: vars.get-color("text", "dark")
+
+.header--home
+    @extend %header
+
+    nav
+        ul
+            li
+                list-style: none
+
+                a
+                    height: 100%
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    color: vars.get-color("text", "dark")
+                    text-decoration: none

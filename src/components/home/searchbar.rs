@@ -2,18 +2,28 @@ use dioxus::prelude::*;
 
 pub fn SearchBar(cx: Scope) -> Element {
     cx.render(rsx! {
-        div {
+        select {
+            name: "language",
             class: "searchbar",
-            h1 {
+            option {
+                value: "Python",
+                class: "searchbar__option",
                 "Python"
             }
-            div {
-                class: "searchbar__dropdown",
-                li {
-                    ul {
-                        "hi"
-                    }
-                }
+            option {
+                value: "Python",
+                class: "searchbar__option",
+                "Python"
+            }
+            option {
+                value: "Python",
+                class: "searchbar__option",
+                "Python"
+            }
+            option {
+                value: "Python",
+                class: "searchbar__option",
+                "Python"
             }
         }
     })

@@ -8,7 +8,7 @@
     flex-direction: row
     align-items: center
     gap: 1rem
-    padding: 0.3rem 2rem
+    padding: 0.3rem 1rem
     background-color: vars.get-color("primary", "dark")
     color: vars.get-color("text", "dark")
 
@@ -17,8 +17,22 @@
 
     nav
         ul
+            display: flex
+            flex-direction: row
+            align-items: center
+            gap: 0.5rem
+
             li
                 list-style: none
+
+                button
+                    height: 100%
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    border: none
+                    cursor: pointer
+                    background-color: vars.get-color("primary", "dark")
 
                 a
                     height: 100%

@@ -8,6 +8,7 @@ dioxus = "0.4.0"
 dioxus-material-icons = { git = "https://github.com/dhzdhd/dioxus-material-icons", branch = "main" }
 dioxus-router = "0.4.1"
 sir = { version = "0.4.0", features = ["dioxus"] }
+wasm-bindgen = "0.2.87"
 
 [build-dependencies]
 glob = "0.3.1"

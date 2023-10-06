@@ -958,6 +958,7 @@ dependencies = [
  "rsass 0.28.2",
  "sir",
  "walkdir",
+ "wasm-bindgen",
 ]
 
 [[package]]

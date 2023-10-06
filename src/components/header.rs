@@ -15,10 +15,28 @@ pub fn Header(cx: Scope) -> Element {
                 ul {
                     class: "header--home__list",
                     li {
+                        button {
+                            MaterialIcon {
+                                name: "play_arrow",
+                                size: 24,
+                                color: MaterialIconColor::Light,
+                            }
+                        }
+                    }
+                    li {
                         Link {
                             to: Route::Settings {},
                             MaterialIcon {
                                 name: "settings",
+                                size: 24,
+                                color: MaterialIconColor::Light,
+                            }
+                        }
+                    }
+                    li {
+                        button {
+                            MaterialIcon {
+                                name: "more_vert",
                                 size: 24,
                                 color: MaterialIconColor::Light,
                             }

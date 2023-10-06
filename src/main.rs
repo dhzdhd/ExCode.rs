@@ -34,6 +34,20 @@ fn main() {
 fn App(cx: Scope) -> Element {
     const STYLE: &str = include_str!("./styles.css");
     cx.render(rsx! {
+        script {
+            src: "https://cdnjs.cloudflare.com/ajax/libs/ace/1.28.0/ace.js",
+            integrity: "sha512-ZxGMf7jYJjId6DxujolfBm1Fgk3eNuujx2bg1oFB6jlXhj33BR47Pnh4wLRhvdCpwoWCKP23sdLQPrIBlTEFKA==",
+            defer: "true",
+        }
+        script {
+            defer: "true",
+            r#"
+                var editor = ace.edit("editor");
+                editor.setTheme("ace/theme/monokai");
+                editor.session.setMode("ace/mode/javascript");
+            "#
+        }
+
         Router::<Route> { }
         MaterialIconStylesheet {
             variant: MaterialIconVariant::Regular
